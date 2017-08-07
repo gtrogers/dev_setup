@@ -11,6 +11,6 @@ apt-add-repository ppa:ansible/ansible -y
 apt-get update
 apt-get install ansible -y
 
-PASSWD=`mkpasswd --method=sha=512 $PASS`
+PASSWD=`mkpasswd --method=sha-512 $PASS`
 
-ansible-playbook -i "localhost," -c local dev-setup.yml --extra-vars="dev_user_password=`mkpasswd --method=sha-512 $PASSWD` github_user=$GITHUB"
+ansible-playbook -i "localhost," -c local dev-setup.yml --extra-vars="dev_user_password=$PASSWD github_user=$GITHUB"
