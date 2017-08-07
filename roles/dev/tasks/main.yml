@@ -10,5 +10,5 @@
   authorized_key:
       user: dev
       state: present
-      key: "https://github.com/{{ github_user }}"
+      key: "https://github.com/{{ github_user }}.keys"
 
