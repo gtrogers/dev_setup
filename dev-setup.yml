@@ -1,8 +1,6 @@
 ---
 - hosts: all
-  tasks:
-    - pip:
-        name: "python-apt"
   roles:
-      - { role: './roles/dev' }
+      - { role: './roles/ansible' }
+      - { role: './roles/nodejs_dev' }
 

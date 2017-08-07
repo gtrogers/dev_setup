@@ -1,4 +1,11 @@
-#!/usr/local/bin bash
+#!/usr/local/env bash
 
-./bootstrap-ansible
-ansible-playbook --check -i "localhost," -c local dev-setup.yml
+apt-get update
+apt-get install software-properties-common
+
+apt-add-repository ppa:ansible/ansible -y
+
+apt-get update
+apt-get install ansible -y
+
+ansible-playbook -i "localhost," -c local dev-setup.yml
