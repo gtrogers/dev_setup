@@ -5,13 +5,13 @@
       shell: /bin/bash
       group: admin
       state: present
+      password: "{{ dev_user_password }}"
 
 - name: Add ssh keys from github
   authorized_key:
       user: dev
       state: present
       key: "https://github.com/{{ github_user }}.keys"
-      password: "{{ dev_user_password }}"
 
 - name: Add dev user to sudoers
   command: "usermod -aG sudo dev"
