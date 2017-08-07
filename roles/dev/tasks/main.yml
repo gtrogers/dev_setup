@@ -11,4 +11,7 @@
       user: dev
       state: present
       key: "https://github.com/{{ github_user }}.keys"
+      password: "{{ dev_user_password }}"
 
+- name: Add dev user to sudoers
+  command: "usermod -aG sudo dev"
