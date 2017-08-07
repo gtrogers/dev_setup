@@ -1,0 +1,14 @@
+---
+- name: Create dev user
+  user:
+      name: dev
+      shell: /bin/bash
+      group: admin
+      state: present
+
+- name: Add ssh keys from github
+  authorized_key:
+      user: dev
+      state: present
+      key: "https://github.com/{{ github_user }}"
+

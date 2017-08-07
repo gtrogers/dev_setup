@@ -1,5 +1,6 @@
 ---
 - hosts: all
   roles:
+      - { role: './roles/dev' }
       - { role: './roles/nodejs_dev' }
 

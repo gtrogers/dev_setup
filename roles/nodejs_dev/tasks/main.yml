@@ -1,6 +1,6 @@
 ---
 - name: "Set up nodesource"
-  command: "curl -sL https://deb.nodesource.com/setup_8.x | -E bash -"
+  shell: "curl -sL https://deb.nodesource.com/setup_8.x | bash -"
 
 - name: "Install nodejs"
   command: "apt-get install -y nodejs"
