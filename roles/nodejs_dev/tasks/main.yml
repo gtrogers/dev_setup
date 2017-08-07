@@ -1,8 +1,11 @@
 ---
 - name: 'install nodesource repo'
   apt_repository: 
-    repo: 'deb https://deb.nodesource.com/setup_8.x main'
+    repo: "{{ item }}"
     state: present
+  with_items:
+      - "deb https://deb.nodesource.com/setup_8.x {{ ansible_distribution_release }} main"
+      - "deb-src https://deb.nodesource.com/setup_8.x {{ ansible_distribution_release }} main"
 
 - name: 'install node'
   apt:

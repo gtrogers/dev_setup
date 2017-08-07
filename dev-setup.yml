@@ -1,6 +1,5 @@
 ---
 - hosts: all
   roles:
-      - { role: './roles/ansible' }
       - { role: './roles/nodejs_dev' }
 

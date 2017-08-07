@@ -1,6 +1,0 @@
----
-- name: "Install python modules needed for ansible"
-  pip:
-      name: "python-apt"
-      state: "present"
-
