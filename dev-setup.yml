@@ -1,5 +1,8 @@
 ---
 - hosts: all
   tasks:
-      - shell: echo "hello world"
+    - pip:
+        name: "python-apt"
+  roles:
+      - { role: './roles/dev' }
 

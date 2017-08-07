@@ -1,0 +1,13 @@
+---
+- name: 'install nodesource repo'
+  apt_repository: 
+    repo: 'deb https://deb.nodesource.com/setup_8.x main'
+    state: present
+
+- name: 'install node'
+  apt:
+      pkg:
+          - nodejs
+      state: installed
+      update_cache: yes
+
