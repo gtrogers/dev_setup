@@ -1,22 +1,7 @@
 ---
-- name: 'add nodesource key' 
-  apt_key:
-      url: https://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0x1655A0AB68576280
-      id: "68576280"
-      state: present
+- name: "Set up nodesource"
+  command: "curl -sL https://deb.nodesource.com/setup_8.x | -E bash -"
 
-- name: 'install nodesource repo'
-  apt_repository: 
-      repo: "{{ item }}"
-      state: present
-  with_items:
-      - "deb https://deb.nodesource.com/setup_8.x {{ ansible_distribution_release }} main"
-      - "deb-src https://deb.nodesource.com/setup_8.x {{ ansible_distribution_release }} main"
-
-- name: 'install node'
-  apt:
-      pkg:
-          - nodejs
-      state: installed
-      update_cache: yes
+- name: "Install nodejs"
+  command: "apt-get install -y nodejs"
 
